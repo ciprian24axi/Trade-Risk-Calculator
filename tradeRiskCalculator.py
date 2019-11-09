@@ -2,8 +2,8 @@ from tkinter import *
 from tkinter import ttk
 
 window = Tk()
-window.title("Trading calculator")
-window.geometry("600x140")
+window.title("Trade Risk Calculator")
+window.geometry("800x140")
 window.grid_columnconfigure((0,1), weight = 1)
 
 entryPrice = Label(window, text="Please insert the entry price: ", font=("Arial Bold", 16))
@@ -41,13 +41,10 @@ def calculate():
         # print('For a reduced risk, respectively a risk level of {}, please exit position at {}'.format(riskLevelDown, exitPriceDown))
         # print('For a increased risk, respectively a risk level of {}, please exit position {}'.format(riskLevelUp, exitPriceUp))
     elif lossDistance == 0:
-        print("The entry price can't be same with the entry price when you open the position")
+        answer.configure(text = "The entry price can't be same with the entry price when you open the position")
     if lossDistance != 0:
         answer.configure(text = 'For a risk level of {}, please exit position at {}'.format(riskLevelcombo.get(), str(exitPrice)[0:6]))
         
-
-btn = Button(window, text="Calculate", bg="orange", fg = "red")
-
 btn = Button(window, text="Calculate", command=calculate)
 btn.grid(column=0, columnspan = 3, row=5)
 
