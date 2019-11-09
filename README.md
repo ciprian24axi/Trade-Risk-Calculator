@@ -18,11 +18,11 @@ Simple
 
 The risk calculator principle is very simple:
 
-Risk level 1 = for 100$ risk you have 100$ potential gain
-Risk level 2 = for 100$ risk you have 200$ potential gain
-Risk level 3 = for 100$ risk you have 300$ potential gain
-Risk level 4 = for 100$ risk you have 400$ potential gain
-Risk level 5 = for 100$ risk you have 500$ potential gain
+-Risk level 1 = for 100$ risk you have 100$ potential gain
+-Risk level 2 = for 100$ risk you have 200$ potential gain
+-Risk level 3 = for 100$ risk you have 300$ potential gain
+-Risk level 4 = for 100$ risk you have 400$ potential gain
+-Risk level 5 = for 100$ risk you have 500$ potential gain
 
 Everyone is free to improve it (especialy on the graphic side) or to add more functionalities.
 
