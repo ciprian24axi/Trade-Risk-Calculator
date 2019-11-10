@@ -40,14 +40,10 @@ def calculate():
         exitPrice = lossDistance * float(riskLevelcombo.get()) + float(entryPricetxt.get())
         exitPriceUp = lossDistance * float(riskLevelUp) + float(entryPricetxt.get())
         exitPriceDown= lossDistance * float(riskLevelDown) + float(entryPricetxt.get())
-        # print('For a reduced risk, respectively a risk level of {}, please exit position at {}'.format(riskLevelDown, exitPriceDown))
-        # print('For a increased risk, respectively a risk level of {}, please exit position {}'.format(riskLevelUp, exitPriceUp))
     elif lossDistance < 0:
         exitPrice = float(entryPricetxt.get()) + lossDistance * float(riskLevelcombo.get())
         exitPriceUp = lossDistance * float(riskLevelUp) + float(entryPricetxt.get())
         exitPriceDown= lossDistance * float(riskLevelDown) + float(entryPricetxt.get())
-        # print('For a reduced risk, respectively a risk level of {}, please exit position at {}'.format(riskLevelDown, exitPriceDown))
-        # print('For a increased risk, respectively a risk level of {}, please exit position {}'.format(riskLevelUp, exitPriceUp))
     elif lossDistance == 0:
         answer.configure(text = "The entry price can't be same with the entry price when you open the position")
     if lossDistance != 0:
