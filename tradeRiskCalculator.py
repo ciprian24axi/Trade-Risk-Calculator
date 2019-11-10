@@ -36,6 +36,7 @@ def calculate():
     riskLevelUp = float(riskLevelcombo.get()) + 1
     riskLevelDown = float(riskLevelcombo.get()) - 1
     lossDistance = float(entryPricetxt.get()) - float(stopPricetxt.get())
+
     if lossDistance > 0:
         exitPrice = lossDistance * float(riskLevelcombo.get()) + float(entryPricetxt.get())
         exitPriceUp = lossDistance * float(riskLevelUp) + float(entryPricetxt.get())
@@ -46,6 +47,7 @@ def calculate():
         exitPriceDown= lossDistance * float(riskLevelDown) + float(entryPricetxt.get())
     elif lossDistance == 0:
         answer.configure(text = "The entry price can't be same with the entry price when you open the position")
+
     if lossDistance != 0 and float(riskLevelcombo.get()) > 1:
         answerUp.configure(text = 'Feel risky today??? exit position at {}'.format(str(exitPriceUp)[0:6]), fg = "red")
         answer.configure(text = 'For a risk level of {}, please exit position at {}'.format(riskLevelcombo.get(), str(exitPrice)[0:6]), fg="green")
@@ -53,7 +55,7 @@ def calculate():
     else:
         answerUp.configure(text = 'Feel risky today??? exit position at {}'.format(str(exitPriceUp)[0:6]), fg = "red")
         answer.configure(text = 'For a risk level of {}, please exit position at {}'.format(riskLevelcombo.get(), str(exitPrice)[0:6]), fg="green")
-        answerDown.configure(text = 'No risk no gain!!!', fg="blue")        
+        answerDown.configure(text = 'No risk, no gain!!!', fg="blue")        
         
 btn = Button(window, text="Calculate", command=calculate)
 btn.grid(column=0, columnspan = 3, row=5)
