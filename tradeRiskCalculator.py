@@ -15,7 +15,7 @@ riskLevel = Label(window, text="Chose a risk level", font=("Arial Bold", 16))
 riskLevel.grid(column = 0, row = 1)
 riskLevelcombo = ttk.Combobox(window, width = 2, state='readonly')
 riskLevelcombo['values']= (1,2,3,4,5)
-riskLevelcombo.current(1)
+riskLevelcombo.current(0)
 riskLevelcombo.grid(column = 1, row =1)
 
 stopPrice = Label(window, text="Please insert the stop lose price:", font=("Arial Bold", 16))
