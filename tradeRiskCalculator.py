@@ -32,11 +32,15 @@ answer.grid(column = 0, columnspan = 3, row = 7)
 answerDown = Label(window, text="", font=("Arial Bold", 16))
 answerDown.grid(column = 0, columnspan = 3, row = 8)
 
+pipNumber = Label(window, text="", font=("Arial Bold", 16))
+pipNumber.grid(column = 0, columnspan = 3, row = 9)
+
 def calculate():
     riskLevelUp = float(riskLevelcombo.get()) + 1
     riskLevelDown = float(riskLevelcombo.get()) - 1
     lossDistance = float(entryPricetxt.get()) - float(stopPricetxt.get())
-
+    pip = abs(lossDistance)
+    
     if lossDistance > 0:
         exitPrice = lossDistance * float(riskLevelcombo.get()) + float(entryPricetxt.get())
         exitPriceUp = lossDistance * float(riskLevelUp) + float(entryPricetxt.get())
@@ -52,15 +56,15 @@ def calculate():
         answerUp.configure(text = 'Feel risky today??? exit position at {}'.format(str(exitPriceUp)[0:6]), fg = "red")
         answer.configure(text = 'For a risk level of {}, please exit position at {}'.format(riskLevelcombo.get(), str(exitPrice)[0:6]), fg="green")
         answerDown.configure(text = 'Wanna play safe??? exit position at {}'.format(str(exitPriceDown)[0:6]), fg="blue")
+        pipNumber.configure(text = 'Pip distance is {}'.format(str(pip)), fg="black")
     else:
         answerUp.configure(text = 'Feel risky today??? exit position at {}'.format(str(exitPriceUp)[0:6]), fg = "red")
         answer.configure(text = 'For a risk level of {}, please exit position at {}'.format(riskLevelcombo.get(), str(exitPrice)[0:6]), fg="green")
-        answerDown.configure(text = 'No risk, no gain!!!', fg="blue")        
+        answerDown.configure(text = 'No risk, no gain!!!', fg="blue")
+        pipNumber.configure(text = 'Pip distance is {}'.format(str(pip)), fg="black")        
         
 btn = Button(window, text="Calculate", command=calculate)
 btn.grid(column=0, columnspan = 3, row=5)
-
-
 
 window.mainloop()
    
